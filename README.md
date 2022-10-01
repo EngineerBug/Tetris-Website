@@ -47,4 +47,31 @@ To stick to the DRY principle, all pages wich send or recive information from th
 
   - tetris.js
 
+getNewPieces()
+  When all squares are no longer moving, a new piece should be randomly secected and spawned at the top of the board.
 
+resetBlock()
+  When the block reaches the floor or lands on top of another div, it should be added to the array of all block positions (boardarray).
+  
+rowElimination()
+  Sometimes a player may fill an entire row, in this case all squares in that row are removed. All squares above that row will be moved down one to fill     the gap left.
+  
+function rotatePiece()
+  When the up arrow is pressed, the current piece should rotate 90 degrees clockwise, allowing more options for the player to match a whole row.
+  
+function movePiece (direction)
+  This function changes all the translate attributes of all div elements with class name "block".
+  @param direction a string with the direction to move the block.
+
+function endGame()
+  Sends a post request to leadeboard.php with the score.
+
+function main()
+  This function is executed when the start button is pressed. It removes the start button before starting a loop at an interval of 1 second which either     updates the current piece or creates a new piece. The loop terminates when the top line on the board has a piece in it which is not the current piece.
+
+function control(key)
+  The game has four controls.
+  Left: move the current block -20px
+  Right move the current block 20px
+  Down: drop the current block 20px
+  Up: rotate the current piece
